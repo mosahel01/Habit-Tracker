@@ -1,35 +1,50 @@
-# React + TypeScript + Vite
+# Habit Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A small, focused habit tracker for building better daily routines.
 
-Currently, two official plugins are available:
+Habits are easier to keep when they're easy to see. This project keeps the
+interface out of the way: a clean weekly view, simple navigation between
+weeks, and just enough feedback to know how the day is going.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Built with
 
-## React Compiler
+- **React** — component-driven UI
+- **TypeScript** — type-safe code from the ground up
+- **Vite** — fast development and optimized builds
+- **Tailwind CSS** — utility-first styling
+- **Oxlint** — quick, reliable linting
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Getting started
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+You'll need Node.js 20 or newer.
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Then open the local URL printed by Vite.
+
+## Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Type-check and build for production |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | Lint the project with Oxlint |
+
+## Project structure
+
+```
+src/
+├── components/   # Reusable UI pieces
+├── App.tsx       # Application shell and layout
+├── main.tsx      # Entry point
+└── index.css     # Tailwind CSS entry and base styles
+```
+
+## Status
+
+Early days — the weekly header and navigation are in place, with habit
+creation and tracking on the way.
