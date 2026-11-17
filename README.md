@@ -3,8 +3,17 @@
 A small, focused habit tracker for building better daily routines.
 
 Habits are easier to keep when they're easy to see. This project keeps the
-interface out of the way: a clean weekly view, simple navigation between
+interface out of the way: a clean weekly grid, simple navigation between
 weeks, and just enough feedback to know how the day is going.
+
+## Features
+
+- Add and delete habits
+- Mark any day of the week as done, with future days disabled
+- Weekly view with previous and next week navigation
+- Current streak per habit
+- Today's progress in the header
+- Habits persisted locally in the browser
 
 ## Built with
 
@@ -12,6 +21,7 @@ weeks, and just enough feedback to know how the day is going.
 - **TypeScript** — type-safe code from the ground up
 - **Vite** — fast development and optimized builds
 - **Tailwind CSS** — utility-first styling
+- **date-fns** — week and date formatting
 - **Oxlint** — quick, reliable linting
 
 ## Getting started
@@ -38,13 +48,24 @@ Then open the local URL printed by Vite.
 
 ```
 src/
-├── components/   # Reusable UI pieces
-├── App.tsx       # Application shell and layout
-├── main.tsx      # Entry point
-└── index.css     # Tailwind CSS entry and base styles
+├── components/
+│   ├── Button.tsx
+│   ├── HabitForm.tsx
+│   ├── HabitList.tsx
+│   └── Header.tsx
+├── context/
+│   ├── HabitProvider.tsx
+│   └── useHabits.ts
+├── hooks/
+│   └── useLocalStorage.ts
+├── App.tsx
+├── index.css
+└── main.tsx
 ```
 
-## Status
+State lives in `HabitProvider` and is exposed through the `useHabits` hook.
+Everything is stored in `localStorage`, so no account or backend is required.
 
-Early days — the weekly header and navigation are in place, with habit
-creation and tracking on the way.
+## License
+
+[MIT](LICENSE)
