@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 
 body {
+	min-height: 100svh;
 	background-color: var(--color-zinc-900);
 	color: var(--color-zinc-100);
+	-webkit-font-smoothing: antialiased;
 }
