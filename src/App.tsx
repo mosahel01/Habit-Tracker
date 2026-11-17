@@ -1,19 +1,16 @@
-import Header from "./components/Header.tsx";
-import HabbitForm from "./components/HabbitForm.tsx";
-import HabbitList from "./components/HabbitList.tsx";
-// import HabbitItem from "./components/HabbitItem.tsx";
+import Header from "./components/Header";
+import HabitForm from "./components/HabitForm";
+import HabitList from "./components/HabitList";
+import { HabitProvider } from "./context/HabitProvider";
 
 export default function App() {
-  return (
-    <div className="max-w-2xl mx-auto p-4 flex flex-col gap-4">
-      <Header />
-      <HabbitForm />
-      <HabbitList />
-      {/* <HabbitItem /> */}
-    </div>
-  );
+	return (
+		<HabitProvider>
+			<div className="mx-auto flex max-w-2xl flex-col gap-4 p-4">
+				<Header />
+				<HabitForm />
+				<HabitList />
+			</div>
+		</HabitProvider>
+	);
 }
-
-// header
-// form
-// list
